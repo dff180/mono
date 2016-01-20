@@ -201,7 +201,7 @@ System.IO/ErrorEventArgs.cs
 System.IO/ErrorEventHandler.cs
 System.IO/WindowsWatcher.cs
 System.IO/DefaultWatcher.cs
-System.IO/KEventWatcher.cs
+System.IO/KeventWatcher.cs
 
 System.IO.Compression/CompressionMode.cs
 System.IO.Compression/DeflateStream.cs
