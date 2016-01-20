@@ -684,15 +684,6 @@ namespace System.Net.Sockets {
 
 		internal int Receive_nochecks (byte [] buf, int offset, int size, SocketFlags flags, out SocketError error)
 		{
-#if NET_2_0 && (!NET_2_1 || MONOTOUCH)
-			if (protocol_type == ProtocolType.Udp) {
-				EndPoint endpoint = new IPEndPoint (IPAddress.Any, 0);
-				int sillyError = 0;
-				int received = ReceiveFrom_nochecks_exc (buf, offset, size, flags, ref endpoint, false, out sillyError);
-				error = (SocketError)sillyError;
-				return received;
-			}
-#endif
 			int nativeError;
 			int ret = Receive_internal (socket, buf, offset, size, flags, out nativeError);
 			error = (SocketError) nativeError;
